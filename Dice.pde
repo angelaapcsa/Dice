@@ -1,10 +1,13 @@
 void setup()
 {
+  size(300,300)
 	noLoop();
 }
 void draw()
 {
-	//your code here
+	background(0);
+  Die bob = new Die();
+  bob.show();
 }
 void mousePressed()
 {
@@ -24,6 +27,9 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
+		rect(x, y, 60, 60, 7);
+    if (int)((Math.random()*6)+1) 
+    {
+      
 	}
 }
