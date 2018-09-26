@@ -12,7 +12,6 @@ void draw()
     {
       Die bob = new Die(x,y);
       bob.show();
-      bob.roll();
     }
   }
   
@@ -35,12 +34,10 @@ class Die //models one single dice cube
 	{
     int sum = 0;
     sum = sum + num;
-    System.out.print(" sum : " + sum );
 	}
 	void show()
 	{
 		rect(myX, myY, 60, 60, 7);
-    System.out.print(num);
     fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
     if (num == 1)
     {
