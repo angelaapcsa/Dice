@@ -1,31 +1,20 @@
 void setup()
 {
-  size(300,300);
+  size(500,500);
 	noLoop();
 }
 void draw()
 {
-	background(255);
-  Die a = new Die(30,30);
-  Die b = new Die(100,30);
-  Die c = new Die(170,30);
-  Die d = new Die(30,100);
-  Die e = new Die(100,100);
-  Die f = new Die(170,100);
-  Die g = new Die(30,170);
-  Die h = new Die(100,170);
-  Die i = new Die(170,170);
-  
-  a.show();
-  b.show();
-  c.show();
-  d.show();
-  e.show();
-  f.show();
-  g.show();
-  h.show();
-  i.show();
-  
+	background(255,255,204);
+  for(int y = 0; y <= 440; y = y+65)
+  {
+    for(int x = 0; x <= 440; x = x+65)
+    {
+      Die bob = new Die(x,y);
+      bob.show();
+      bob.roll();
+    }
+  }
   
 }
 void mousePressed()
@@ -44,15 +33,19 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		//your code here
+    int sum = 0;
+    sum = sum + num;
+    System.out.print(" sum : " + sum );
 	}
 	void show()
 	{
 		rect(myX, myY, 60, 60, 7);
     System.out.print(num);
+    fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
     if (num == 1)
     {
       ellipse(myX + 30,myY + 30, 10, 10);
+      
     }else if (num ==2)
     {
       ellipse(myX + 15,myY + 15, 10, 10);
