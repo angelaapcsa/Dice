@@ -14,7 +14,12 @@ void draw()
       bob.show();
     }
   }
-  
+  int sum = 0;
+  sum = sum + num;
+  fill(50);
+  textSize(22);
+  text("total = " + sum, 100,475);
+  fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
 }
 void mousePressed()
 {
@@ -27,18 +32,17 @@ class Die //models one single dice cube
 	{
 		myX = x;
     myY = y;
-    num = (int)(Math.random()*6)+1;
+    roll();
     
 	}
 	void roll()
 	{
-    int sum = 0;
-    sum = sum + num;
+    num = (int)(Math.random()*6)+1;
 	}
 	void show()
 	{
-		rect(myX, myY, 60, 60, 7);
     fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
+		rect(myX, myY, 60, 60, 7);
     if (num == 1)
     {
       ellipse(myX + 30,myY + 30, 10, 10);
@@ -73,7 +77,6 @@ class Die //models one single dice cube
       ellipse(myX + 45,myY + 15, 10, 10);
       ellipse(myX + 45,myY + 30, 10, 10);
       ellipse(myX + 45,myY + 45, 10, 10);
-    }
-      
-	}
+    }	
+}
 }
