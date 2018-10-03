@@ -5,6 +5,7 @@ void setup()
 }
 void draw()
 {
+  int sum = 0;
 	background(255,255,204);
   for(int y = 0; y <= 440; y = y+65)
   {
@@ -12,10 +13,9 @@ void draw()
     {
       Die bob = new Die(x,y);
       bob.show();
+      sum = sum + bob.num;
     }
   }
-  int sum = 0;
-  sum = sum + num;
   fill(50);
   textSize(22);
   text("total = " + sum, 100,475);
